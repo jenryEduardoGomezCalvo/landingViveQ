@@ -154,6 +154,18 @@
       color: var(--accent);
     }
 
+    .hero .slogan {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .hero .slogan span {
+      color: var(--accent);
+    }
+
     .hero p {
       max-width: 640px;
       font-size: 1.1rem;
@@ -202,16 +214,16 @@
       align-items: center;
     }
 
-    /* --- ESTILOS PARA LA NUEVA IMAGEN CONCEPTUAL FLOTANTE --- */
+    /* --- ESTILOS PARA LA NUEVA IMAGEN CONCEPTUAL FLOTANTE (MANTENIDO) --- */
     .conceptual-visual {
       width: 100%;
       max-width: 500px;
       height: auto;
-      /* Aplicamos la animación de flotado */
+      /* Aplicamos la animación de flotado original */
       animation: float-illustration 6s ease-in-out infinite;
     }
 
-    /* Definición de la animación de flotado */
+    /* Definición de la animación de flotado original */
     @keyframes float-illustration {
       0% {
         transform: translateY(0px) rotate(0deg);
@@ -437,9 +449,9 @@
 
       <div class="nav-links">
         <a href="#problema">Problema</a>
-        <a href="#solucion">Solución</a>
-        <a href="#tecnologia">Tecnología</a>
-        <a href="#impacto">Impacto</a>
+        <a href="#solucion">Alcances</a>
+        <a href="#usuarios">Roles</a>
+        <a href="#monetizacion">Monetización</a>
       </div>
     </nav>
 
@@ -449,55 +461,61 @@
           La próxima generación de <span>recomendación cultural</span>.
         </h1>
 
+        <p class="slogan">
+          Cuéntale cómo te sientes. <span>Deja que el arte responda.</span>
+        </p>
+
         <p>
           VibeQ transforma emociones, contexto y lenguaje natural en recomendaciones culturales precisas, humanas y adaptativas. Una plataforma impulsada por NLP, sistemas híbridos de recomendación y aprendizaje por refuerzo para eliminar la fatiga de decisión.
         </p>
 
         <div class="hero-actions">
-          <a href="#solucion" class="btn btn-primary">Explorar propuesta</a>
-          <a href="#tecnologia" class="btn btn-secondary">Arquitectura IA</a>
+          <a href="#solucion" class="btn btn-primary">Explorar alcances</a>
+          <a href="#usuarios" class="btn btn-secondary">Roles del Sistema</a>
         </div>
       </div>
 
       <div class="visual-wrapper">
         <svg class="conceptual-visual" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="250" cy="250" r="200" fill="#d8c3b2" fill-opacity="0.2"/>
-          
-          <path d="M150 150C200 100 300 100 350 150" stroke="#9d7b62" stroke-width="2" stroke-dasharray="6 6"/>
-          <path d="M150 350C200 400 300 400 350 350" stroke="#667a6d" stroke-width="2" stroke-dasharray="6 6"/>
-          
-          <circle cx="150" cy="150" r="30" fill="#9d7b62" fill-opacity="0.6"/> <circle cx="350" cy="150" r="25" fill="#667a6d" fill-opacity="0.6"/> <circle cx="150" cy="350" r="25" fill="#667a6d" fill-opacity="0.6"/>
-          <circle cx="350" cy="350" r="30" fill="#9d7b62" fill-opacity="0.6"/>
-          
-          <path d="M140 155C140 155 145 150 150 150C155 150 160 155 160 155" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <path d="M340 345C340 345 345 350 350 350C355 350 360 345 360 345" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          
           <defs>
-            <filter id="glass" x="180" y="180" width="140" height="140" filterUnits="userSpaceOnUse">
-              <feGaussianBlur stdDeviation="5" result="blur"/>
-              <feFlood flood-color="white" flood-opacity="0.3" result="flood"/>
-              <feComposite in="flood" in2="blur" operator="in" result="softLight"/>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="6" result="blur"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.8 0" result="glow_color"/>
               <feMerge>
-                <feMergeNode in="softLight"/>
+                <feMergeNode in="blur"/>
                 <feMergeNode in="SourceGraphic"/>
               </feMerge>
             </filter>
           </defs>
-          <rect x="200" y="200" width="100" height="100" rx="20" fill="white" fill-opacity="0.5" filter="url(#glass)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+          <circle cx="250" cy="250" r="200" fill="#d8c3b2" fill-opacity="0.15"/>
           
-          <path d="M230 250H270M235 240H265M240 230H260M235 260H265M240 270H260" stroke="#171717" stroke-width="3" stroke-linecap="round"/>
+          <path d="M250 150 
+                C230 150 215 160 215 180 
+                L215 220 
+                C190 210 165 210 160 230 
+                L160 260 
+                C165 280 190 280 215 270 
+                L215 320 
+                C215 340 230 350 250 350 
+                C270 350 285 340 285 320 
+                L285 270 
+                C310 280 335 280 340 260 
+                L340 230 
+                C335 210 310 210 285 220 
+                L285 180 
+                C285 160 270 150 250 150 Z" fill="white" filter="url(#glow)"/>
           
-          <line x1="175" y1="168" x2="208" y2="208" stroke="#9d7b62" stroke-width="1.5" stroke-opacity="0.5"/>
-          <line x1="328" y1="166" x2="293" y2="208" stroke="#667a6d" stroke-width="1.5" stroke-opacity="0.5"/>
-          <line x1="172" y1="332" x2="208" y2="292" stroke="#667a6d" stroke-width="1.5" stroke-opacity="0.5"/>
-          <line x1="325" y1="330" x2="292" y2="292" stroke="#9d7b62" stroke-width="1.5" stroke-opacity="0.5"/>
+          <circle cx="160" cy="250" r="5" fill="white" fill-opacity="0.6"/>
+          <circle cx="340" cy="250" r="5" fill="white" fill-opacity="0.6"/>
+          <circle cx="250" cy="150" r="4" fill="white" fill-opacity="0.5"/>
         </svg>
       </div>
     </section>
   </div>
 
   <section id="problema">
-    <div class="container" data-aos="fade-up"> <div class="section-title">
+    <div class="container" data-aos="fade-up"> 
+      <div class="section-title">
         <span>Problemática</span>
         <h2>Elegir contenido se convirtió en una experiencia agotadora.</h2>
       </div>
@@ -509,7 +527,7 @@
       <div class="stats">
         <div class="stat" data-aos="fade-up" data-aos-delay="100">
           <h3>90s</h3>
-          <p>Timepo promedio antes de abandonar una plataforma por frustración al no encontrar contenido relevante.</p>
+          <p>Tiempo promedio antes de abandonar una plataforma por frustración al no encontrar contenido relevante.</p>
         </div>
 
         <div class="stat" data-aos="fade-up" data-aos-delay="200">
@@ -528,8 +546,8 @@
   <section id="solucion">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
-        <span>Solución</span>
-        <h2>Un ecosistema cultural impulsado por inteligencia emocional.</h2>
+        <span>Alcances del Proyecto</span>
+        <h2>Módulos técnicos y funcionales que sí vamos a manejar.</h2>
       </div>
 
       <p class="section-description">
@@ -539,99 +557,100 @@
       <div class="grid">
         <div class="card" data-aos="zoom-in-up" data-aos-delay="100">
           <div class="card-number">01</div>
-          <h3>NLP Emocional</h3>
-          <p>Análisis semántico avanzado mediante BERT Multilingüe y Sentence-BERT para detectar emociones complejas, intención y contexto psicológico.</p>
+          <h3>Catálogo Co-creado</h3>
+          <p>El sistema se alimenta directamente del contenido subido por los usuarios creadores. Cada obra pasa de manera automática a una cola de moderación dedicada para su respectiva validación y aprobación por parte del administrador.</p>
         </div>
 
         <div class="card" data-aos="zoom-in-up" data-aos-delay="200">
           <div class="card-number">02</div>
-          <h3>Motor Híbrido</h3>
-          <p>Integración de filtrado colaborativo y filtrado basado en contenido para construir recomendaciones altamente personalizadas.</p>
+          <h3>NLP y Capa Semántica</h3>
+          <p>Pipeline en español para extraer carga emocional, intenciones de consumo y palabras clave de descripciones libres. Utiliza un almacenamiento vectorial para recuperación por similitud conceptual entre el contexto y los metadatos.</p>
         </div>
 
         <div class="card" data-aos="zoom-in-up" data-aos-delay="300">
           <div class="card-number">03</div>
-          <h3>Aprendizaje Adaptativo</h3>
-          <p>Contextual Bandits optimiza continuamente las recomendaciones equilibrando exploración y preferencias conocidas.</p>
+          <h3>Bandidos Contextuales</h3>
+          <p>Algoritmo inteligente de selección que lee el estado de ánimo actual del usuario y aprende en tiempo real. Equilibra la experiencia sugiriendo contenido de gustos conocidos (explotación) junto a propuestas nuevas (exploración).</p>
         </div>
 
         <div class="card" data-aos="zoom-in-up" data-aos-delay="400">
           <div class="card-number">04</div>
-          <h3>Curador Cultural IA</h3>
-          <p>Un LLM local genera explicaciones empáticas y narrativas sobre por qué una obra conecta emocionalmente con el usuario.</p>
+          <h3>Justificación Narrativa</h3>
+          <p>Implementación de un modelo de generación de lenguaje adaptativo integrado en el servidor. Redacta de forma automatizada un párrafo introductorio empático que justifica coherentemente por qué la obra conecta con tu contexto.</p>
         </div>
       </div>
+
+      <div class="section-title" style="margin-top: 80px;" data-aos="fade-up">
+        <span>Límites del Sistema</span>
+        <h2>Lo que NO vamos a manejar en esta etapa.</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card" data-aos="zoom-in-up" data-aos-delay="100">
+          <div class="card-number">01</div>
+          <h3>Alojamiento o Reproducción</h3>
+          <p>Somos estrictamente una plataforma de descubrimiento y recomendación. No se almacenará, transmitirá ni reproducirá video o audio nativo. El consumo final se delega a plataformas externas mediante enlaces.</p>
+        </div>
+
+        <div class="card" data-aos="zoom-in-up" data-aos-delay="200">
+          <div class="card-number">02</div>
+          <h3>Procesamiento On-Device</h3>
+          <p>Toda la carga de cómputo asociada a los modelos de lenguaje, la extracción semántica y la inferencia se ejecutará de forma centralizada en la infraestructura del servidor (Backend), liberando el hardware del usuario.</p>
+        </div>
+
+        <div class="card" data-aos="zoom-in-up" data-aos-delay="300">
+          <div class="card-number">03</div>
+          <h3>Soporte Multiidioma</h3>
+          <p>En esta primera etapa del ciclo de vida del producto, el sistema procesará entradas y generará salidas única y exclusivamente en el idioma español, optimizando la precisión de los modelos locales.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <section id="tecnologia">
+  <section id="usuarios">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
-        <span>Tecnologías</span>
-        <h2>Arquitectura diseñada para inteligencia contextual en tiempo real.</h2>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item" data-aos="fade-right">
-          <strong>NLP</strong>
-          <div>
-            <h4>Comprensión emocional avanzada</h4>
-            <p>Implementación con Python, spaCy y HuggingFace Transformers utilizando fine-tuning de BERT Multilingüe y embeddings semánticos con Sentence-BERT.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" data-aos="fade-left">
-          <strong>RecSys</strong>
-          <div>
-            <h4>Recomendación híbrida</h4>
-            <p>Sistemas de filtrado colaborativo y basado en contenido respaldados por almacenamiento vectorial mediante ChromaDB o PGVector.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" data-aos="fade-right">
-          <strong>RL</strong>
-          <div>
-            <h4>Contextual Bandits</h4>
-            <p>Algoritmos como LinUCB y Thompson Sampling permiten adaptar las recomendaciones en tiempo real con bajo costo computacional.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" data-aos="fade-left">
-          <strong>LLM</strong>
-          <div>
-            <h4>Curaduría generativa local</h4>
-            <p>Integración de modelos open source como Mistral-7B y LLaMA-3 cuantizados para operación eficiente y privada en servidores locales.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="impacto">
-    <div class="container" data-aos="fade-up">
-      <div class="section-title">
-        <span>Impacto</span>
-        <h2>Más allá de recomendar contenido. Diseñado para bienestar digital.</h2>
+        <span>Ecosistema</span>
+        <h2>Roles y usuarios clave dentro de la plataforma.</h2>
       </div>
 
       <div class="grid">
         <div class="card" data-aos="flip-left" data-aos-delay="100">
-          <div class="card-number">Usuario</div>
-          <h3>Experiencia emocional personalizada</h3>
-          <p>Las personas reciben recomendaciones alineadas a su estado emocional real y no únicamente a patrones históricos de consumo.</p>
+          <div class="card-number">01</div>
+          <h3>Consumidor</h3>
+          <p><strong>El Usuario Final:</strong> Personas que buscan descubrir libros, películas o música de una manera completamente nueva y personalizada, guiados exclusivamente por su estado de ánimo, emociones y contexto actual.</p>
         </div>
 
         <div class="card" data-aos="flip-left" data-aos-delay="200">
-          <div class="card-number">Creador</div>
-          <h3>Curaduría semántica inteligente</h3>
-          <p>Los reseñadores pueden analizar el impacto emocional de sus publicaciones y contribuir activamente al ecosistema cultural.</p>
+          <div class="card-number">02</div>
+          <h3>Creador / Reseñador</h3>
+          <p><strong>El Motor de Contenido:</strong> Entusiastas de la cultura, críticos independientes y creadores especializados. Son los encargados de alimentar el sistema subiendo las obras que darán vida al catálogo.</p>
         </div>
 
         <div class="card" data-aos="flip-left" data-aos-delay="300">
-          <div class="card-number">Administrador</div>
-          <h3>Monitoreo y transparencia IA</h3>
-          <p>Herramientas para supervisar el rendimiento del NLP, métricas de recompensa y latencia de modelos generativos.</p>
+          <div class="card-number">03</div>
+          <h3>Administrador</h3>
+          <p><strong>El Garante del Sistema:</strong> Su labor es supervisar la salud del entorno, moderar la cola de contenido entrante y evaluar el rendimiento de la IA mediante un panel visual, sin interactuar de forma directa con la terminal o BD.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="monetizacion">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <span>Modelo de Negocio</span>
+        <h2>Sostenibilidad y bienestar digital.</h2>
+      </div>
+      
+      <div class="card" style="max-width: 800px; margin: 40px auto 0; text-align: center; padding: 50px 34px;">
+        <div class="card-number" style="margin-bottom: 16px;">Suscripción Premium</div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif;">Una Experiencia Libre de Anuncios</h3>
+        <p style="color: var(--muted); line-height: 1.9; font-size: 1.05rem; max-width: 650px; margin: 0 auto 24px;">
+          Para garantizar un espacio de descubrimiento inmersivo, empático y sin interrupciones visuales, VibeQ propone un modelo de monetización basado exclusivamente en suscripciones, eliminando los anuncios publicitarios tradicionales.
+        </p>
+        <a href="#" class="btn btn-primary">Ver Propuesta de Suscripción</a>
       </div>
     </div>
   </section>
@@ -647,11 +666,10 @@
   
   <script>
     AOS.init({
-      // Configuraciones globales opcionales:
-      duration: 800, // Duración por defecto de las animaciones (ms)
-      easing: 'ease-out-quad', // Curva de animación
-      once: true, // Si la animación debe ocurrir solo una vez al bajar
-      mirror: false, // Si los elementos deben animarse al salir de la pantalla al subir
+      duration: 800,
+      easing: 'ease-out-quad',
+      once: true,
+      mirror: false,
     });
   </script>
 
